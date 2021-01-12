@@ -30,8 +30,8 @@ impl SelectServer {
                 
             },
             Some(1) => println!("++++++++++++++ {}", commands[1]),
-            Some(1) => println!("++++++++++++++ {}", commands[2]),
-            Some(1) => println!("++++++++++++++ {}", commands[3]),
+            Some(2) => println!("++++++++++++++ {}", commands[2]),
+            Some(3) => println!("++++++++++++++ {}", commands[3]),
             _ => println!("-----------"),
         };
         Ok(())
