@@ -1,34 +1,11 @@
-use dialoguer::{
-    Select,
-    theme::ColorfulTheme,
-    console::Term
-};
 use std::io::Result;
 
-struct CliArgs {
-    subcommand: CliCommand,
-}
+mod cli_command;
 
-struct  CliCommand {
-    ConstructTransactionCommand: String,
-    Utils: String,
-}
-
-impl CliCommand {
-    fn choose_command(self) -> Result<()> {
-        let commands:Vec<String> = vec![self.ConstructTransactionCommand, self.Utils];
-        let selection = Select::with_theme(&ColorfulTheme::default())
-            .items(&commands)
-            .default(0)
-            .interact_on_opt(&Term::stderr());
-        println!("***** {:?}", selection.unwrap());
-        // let s = selection.unwrap();
-        Ok(())
-    }
-}
 
 fn main() -> Result<()> {
-    let cli_command = CliCommand {
+    println!();
+    let cli_command = cli_command::CliCommand {
         ConstructTransactionCommand: "construct-transaction-command".to_string(),
         Utils: "utils".to_string(),
     };
