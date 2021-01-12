@@ -6,10 +6,10 @@ use dialoguer::{
 
 use std::io::Result;
 
-use create_account_command;
-use delete_account_command;
-use send_command;
-use stake_command;
+mod create_account_command;
+mod delete_account_command;
+mod send_command;
+mod stake_command;
 
 pub struct ConstructTransactionCommand {
     TransferNEARTokens: send_command::Send,
